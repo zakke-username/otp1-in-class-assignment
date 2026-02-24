@@ -38,6 +38,34 @@ class TemperatureConverterTest {
     }
 
     @Test
+    void kelvinToCelsius_convert() {
+        TemperatureConverter c = new TemperatureConverter();
+
+        double result1 = c.kelvinToCelsius(0);
+        assertEquals(-273.15, result1, 0.01);
+
+        double result2 = c.kelvinToCelsius(273.15);
+        assertEquals(0, result2, 0.01);
+
+        double result3 = c.kelvinToCelsius(350.0);
+        assertEquals(76.85, result3, 0.01);
+    }
+
+    @Test
+    void celsiusToKelvin_convert() {
+        TemperatureConverter c = new TemperatureConverter();
+
+        double result1 = c.celsiusToKelvin(-273.15);
+        assertEquals(0, result1, 0.01);
+
+        double result2 = c.celsiusToKelvin(0);
+        assertEquals(273.15, result2, 0.01);
+
+        double result3 = c.celsiusToKelvin(24.5);
+        assertEquals(297.65, result3, 0.01);
+    }
+
+    @Test
     void isExtremeTemperature_test() {
         TemperatureConverter c = new TemperatureConverter();
 
